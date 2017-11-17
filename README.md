@@ -46,3 +46,18 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
         </div><!-- .row -->
       </div><!-- .container -->
     <?php endif;?>
+
+###Registro de marcações
+
+CREATE TABLE `estagiando_bd`.`registros` (
+  `id` INT NOT NULL,
+  `id_usuario` INT NOT NULL,
+  `data` VARCHAR(45) NULL,
+  `hora` VARCHAR(45) NULL,
+  `tipo_marcacao` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
+
+
+####Principais dificuldades
+
+1) Ajax com codelguiniter - Como essa foi a primeira vez que trabalhei com o framework, tive algumas dificuldades em entender o funcionamento do seu token na hora de enviar e receber informações via ajax. Minha intenção era enviar as marcações dos estagiários para o banco de dados usando Ajax, porém o frame voltava com o erro 403. Esse problema ocorre pelas validações de token que devem ocorrer entre controller e dados enviados pelo ajax. Por questão de tempo, tive que buscar outras alteranativas.

@@ -52,6 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['register'] = 'user/register';
 $route['login'] = 'user/login';
 $route['logout'] = 'user/logout';
+$route['register_hour'] = 'hour_marker/register_hour';
 
 $route['default_controller'] = 'user/login';
 $route['404_override'] = '';

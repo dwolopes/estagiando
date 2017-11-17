@@ -18,10 +18,11 @@
       						<div class="caption">
         						<h3>Registre sua entrada</h3>
         						<p>Entrada ou volta do almoço.</p>
-        						<p>
-        							<a href="#" class="btn btn-primary" onclick="myFunction()" role="button">Registrar entrada</a>
-        							<div class="alert alert-success" id="demo"></div>
-        						</p>
+        						<form action="<?=base_url('register_hour')?>" method="post" accept-charset="utf-8">
+        							<input type="hidden" name="mark_type"  id="mark_type" value="entrada">
+        							<input type="submit" class="btn btn-primary" value="Registrar">
+        						</form>
+        						<div id="obrigado"></div>
       						</div>
       					</center>
     				</div>
@@ -34,7 +35,7 @@
     							<h3>Registre sua saída</h3>
     							<p>Saída ou saída para almoço.</p>
     							<p>
-    								<a href="#" class="btn btn-danger" onclick="myFunction()" role="button">Registrar saída</a>
+    								<a href="#" class="btn btn-danger" role="button">Registrar saída</a>
     								<div class="alert alert-danger" id="demo"></div>
     							</p>
   							</div>
