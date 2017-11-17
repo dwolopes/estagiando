@@ -19,7 +19,7 @@ class Hour_marker extends CI_Controller {
 		parent::__construct();
 		$this->load->library(array('session'));
 		$this->load->helper(array('url'));
-		//$this->load->model('hour_marker_model');
+		$this->load->model('hour_marker_model');
 
 	}
 
