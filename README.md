@@ -34,3 +34,15 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 );
 ```
 
+
+###Dados de uma sessão
+
+    <?php if (isset($_SESSION)): ?>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <?php var_dump($_SESSION);?>
+          </div>
+        </div><!-- .row -->
+      </div><!-- .container -->
+    <?php endif;?>

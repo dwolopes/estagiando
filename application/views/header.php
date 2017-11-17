@@ -48,14 +48,16 @@
 	</header><!-- #site-header -->
 
 	<main id="site-content" role="main">
-
-		<?php if (isset($_SESSION)): ?>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<?php var_dump($_SESSION);?>
-					</div>
-				</div><!-- .row -->
-			</div><!-- .container -->
-		<?php endif;?>
+	<div class="jumbotron">
+	  <div class="container">
+	    <div class="row">
+			<div class="col-md-6">
+				<h2 id="relogio"></h2>
+			</div>
+			<div class="col-md-4 pull-right">
+				<img class="image-responsive" width="20%" src="<?=base_url('assets/imagens/relogio.png')?>">
+			</div>
+		</div>
+	  </div>
+	</div>
 
