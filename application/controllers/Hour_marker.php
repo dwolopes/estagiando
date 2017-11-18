@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+date_default_timezone_set('America/Sao_Paulo');
 
 /**
  * User class.
@@ -41,9 +42,19 @@ class Hour_marker extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 
+		$user_id = $_SESSION['user_id'];
+		$dataLocal = date('d-m-Y', time());
+		$horaLocal = date('H:i:s', time());
 		$tipo_marcarcao = $this->input->post('mark_type');
 
-		echo $tipo_marcarcao;
+		if ($this->hour_marker_model->include_registration($user_id, $dataLocal, $horaLocal, $tipo_marcarcao)) {
+
+				// insert registration ok
+				$this->load->view('header');
+				$this->load->view('user/register/register_success', $data);
+				$this->load->view('footer');
+
+		} else echo "Erro";
 
 	}
 
