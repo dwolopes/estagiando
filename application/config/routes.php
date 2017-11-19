@@ -53,7 +53,7 @@ $route['register'] = 'user/register';
 $route['login'] = 'user/login';
 $route['logout'] = 'user/logout';
 $route['sucess'] = 'user/initial_page';
-$route['register_hour'] = 'hour_marker/register_hour';
+$route['register_hour'] = 'mark/register_hour';
 
 $route['default_controller'] = 'user/login';
 $route['404_override'] = '';
