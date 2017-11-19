@@ -54,6 +54,8 @@ $route['login'] = 'user/login';
 $route['logout'] = 'user/logout';
 $route['sucess'] = 'user/initial_page';
 $route['register_hour'] = 'mark/register_hour';
+$route['recovery'] = 'mark/recover_marks';
+
 
 $route['default_controller'] = 'user/login';
 $route['404_override'] = '';

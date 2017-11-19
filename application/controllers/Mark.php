@@ -66,8 +66,7 @@ class Mark extends CI_Controller {
 
 	}
 
-	public function mark_type_check($str)
-    {
+	public function mark_type_check($str){
 
 		$user_id = $_SESSION['user_id'];
 		$dataLocal = date('d-m-Y', time());
@@ -84,5 +83,20 @@ class Mark extends CI_Controller {
             return TRUE;
         }
     }
+
+    public function recover_marks() {
+		// create the data object
+
+		if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+			$user_id = $_SESSION['user_id'];
+			$data['marks'] = $this->mark_model->recovery_marks($user_id);
+
+			$this->load->view('header');
+			$this->load->view('user/login/check_marks', $data);
+			$this->load->view('footer');
+		}
+
+	}
+
 
 }

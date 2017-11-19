@@ -37,7 +37,7 @@
 					<ul class="nav navbar-nav navbar-right">
 						<?php if (isset($_SESSION['username']) && $_SESSION['logged_in'] === true): ?>
 							<li><a href="<?=base_url('sucess')?>">Página inicial</a></li>
-							<li><a href="<?=base_url('logout')?>">Verificar marcações</a></li>
+							<li><a href="<?=base_url('recovery')?>">Verificar marcações</a></li>
 							<li><a href="<?=base_url('logout')?>">Logout</a></li>
 						<?php else: ?>
 							<li><a href="<?=base_url('register')?>">Registrar</a></li>

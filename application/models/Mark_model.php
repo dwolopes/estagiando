@@ -64,4 +64,24 @@ class Mark_model extends CI_Model {
 
 	}
 
+
+	/**
+	 * Recovery all marks from the user
+	 *
+	 * @access public
+	 * @param mixed $user_id
+	 * @param mixed $data_local
+	 * @param mixed $tipo_marcacao
+	 * @return bool true on success, false on failure
+	 */
+	public function recovery_marks($user_id) {
+
+		$this->db->select('*');
+		$this->db->from('registros');
+		$query = $this->db->get();
+
+		return $query->result_array();
+
+	}
+
 }
