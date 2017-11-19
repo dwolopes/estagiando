@@ -22,7 +22,7 @@
 <body>
 
 	<header id="site-header">
-		<nav id="nav-bar" class="navbar navbar-default" role="navigation">
+		<nav style="border:none;" id="nav-bar" class="navbar navbar-default" role="navigation">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -52,14 +52,6 @@
 	<main id="site-content" role="main">
 	<div class="jumbotron">
 	  <div class="container">
-	    <div class="row">
-			<div class="col-md-6">
-				<h2 id="relogio"></h2>
-			</div>
-			<div class="col-md-4 pull-right">
-				<img class="image-responsive" width="20%" src="<?=base_url('assets/imagens/relogio.png')?>">
-			</div>
-		</div>
 	  </div>
 	</div>
 
