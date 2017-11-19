@@ -47,15 +47,42 @@ class Hour_marker extends CI_Controller {
 		$horaLocal = date('H:i:s', time());
 		$tipo_marcarcao = $this->input->post('mark_type');
 
-		if ($this->hour_marker_model->include_registration($user_id, $dataLocal, $horaLocal, $tipo_marcarcao)) {
 
-				// insert registration ok
-				$this->load->view('header');
-				$this->load->view('user/register/register_success', $data);
-				$this->load->view('footer');
+		$this->form_validation->set_rules('mark_type', 'Tipo Marcação', 'callback_mark_type_check');
 
-		} else echo "Erro";
+
+		if ($this->form_validation->run() == FALSE){
+
+			$this->load->view('header');
+			$this->load->view('errors/registration/error_registration');
+			$this->load->view('footer');
+            
+        }else{
+            $this->hour_marker_model->include_registration($user_id, $dataLocal, $horaLocal, $tipo_marcarcao);
+            $this->load->view('header');
+			$this->load->view('user/register/register_success', $data);
+			$this->load->view('footer');
+        }
 
 	}
+
+	public function mark_type_check($str)
+    {
+
+		$user_id = $_SESSION['user_id'];
+		$dataLocal = date('d-m-Y', time());
+
+    	$registration = $this->hour_marker_model->check_mark_type($user_id,$dataLocal,$str);
+            
+        if ($registration > 0){
+
+           $this->form_validation->set_message('check_mark_type', 'Já houve essa marcação hoje, verifique qual marcação deve ser registrada agora - {field}');
+           return FALSE;
+        }
+        else
+        {
+            return TRUE;
+        }
+    }
 
 }

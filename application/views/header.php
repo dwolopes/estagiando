@@ -22,7 +22,7 @@
 <body>
 
 	<header id="site-header">
-		<nav class="navbar navbar-default" role="navigation">
+		<nav id="nav-bar" class="navbar navbar-default" role="navigation">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -31,11 +31,13 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="<?=base_url()?>">Estagiando</a>
+					<a class="navbar-brand" href="<?=base_url('')?>"><img id="logo_img" width= "28%" src="<?=base_url('assets/imagens/logo.png')?>"></a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
 						<?php if (isset($_SESSION['username']) && $_SESSION['logged_in'] === true): ?>
+							<li><a href="<?=base_url('sucess')?>">Página inicial</a></li>
+							<li><a href="<?=base_url('logout')?>">Verificar marcações</a></li>
 							<li><a href="<?=base_url('logout')?>">Logout</a></li>
 						<?php else: ?>
 							<li><a href="<?=base_url('register')?>">Registrar</a></li>

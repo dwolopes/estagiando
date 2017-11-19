@@ -186,4 +186,22 @@ class User extends CI_Controller {
 
 	}
 
+	/**
+	 * Redirect to Initial page.
+	 *
+	 * @access public
+	 * @return void
+	 */
+	public function initial_page() {
+
+		if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true){
+
+			// user redirect ok
+			$this->load->view('header');
+			$this->load->view('user/login/login_success');
+			$this->load->view('footer');
+		}
+
+	}
+
 }

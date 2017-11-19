@@ -1,0 +1,21 @@
+/*Navbar*/
+
+nav#nav-bar.navbar.navbar-default{
+	background-color: #c0b5e5;
+}
+
+
+img#logo_img{
+	margin-top: -17px;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #01000a;
+    font-size: medium;
+    font-weight: 300;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: #fffcfc;
+    background-color: #3912988a;
+}
