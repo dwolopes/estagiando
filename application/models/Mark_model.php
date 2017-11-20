@@ -41,6 +41,27 @@ class Mark_model extends CI_Model {
 		return $this->db->get()->row('id');
 
 	}
+
+	/**
+	 * Verify if the registration has a logical registration before. In this case, check if the registration has a "entrada" before.
+	 *
+	 * @access public
+	 * @param mixed $user_id
+	 * @param mixed $data_local
+	 * @param mixed $tipo_marcacao
+	 * @return bool true on success, false on failure
+	 */
+	public function mark_before_check($user_id, $data_local) {
+
+		$this->db->select('id');
+		$this->db->from('registros');
+		$this->db->where('data', $data_local);
+		$this->db->where('id_usuario',$user_id);
+		$this->db->where('tipo_marcacao',"entrada");
+
+		return $this->db->get()->row('id');
+
+	}
 	/**
 	 * include_registration function.
 	 *

@@ -49,6 +49,8 @@ class Mark extends CI_Controller {
 
 
 		$this->form_validation->set_rules('mark_type', 'Tipo Marcação', 'callback_mark_type_check');
+		/*$this->form_validation->set_rules('mark_type', 'Tipo Marcação', 'callback_mark_before_check');*/
+		/*Função em adapatação*/
 
 
 		if ($this->form_validation->run() == FALSE){
@@ -66,12 +68,12 @@ class Mark extends CI_Controller {
 
 	}
 
-	public function mark_type_check($str){
+	public function mark_type_check($tipo_marcacao){
 
 		$user_id = $_SESSION['user_id'];
 		$dataLocal = date('d-m-Y', time());
 
-    	$registration = $this->mark_model->check_mark_type($user_id,$dataLocal,$str);
+    	$registration = $this->mark_model->check_mark_type($user_id,$dataLocal,$tipo_marcacao);
             
         if ($registration > 0){
 
@@ -82,6 +84,28 @@ class Mark extends CI_Controller {
         {
             return TRUE;
         }
+    }
+
+    public function mark_before_check($tipo_marcacao){
+
+		$user_id = $_SESSION['user_id'];
+		$dataLocal = date('d-m-Y', time());
+
+		if($tipo_marcarcao = "saida_almoco" || $tipo_marcarcao = "entrada_almoco" || $tipo_marcarcao = "saida" ){
+
+			if($registration = $this->mark_model->mark_before_check($user_id,$dataLocal)){
+				return TRUE;
+			}else{
+        	
+        		$this->form_validation->set_message('check_mark_type', 'Já houve essa marcação hoje, verifique qual marcação deve ser registrada agora - {field}');
+           		return FALSE;
+        	}
+
+		}else{
+
+			return TRUE;
+		}
+         
     }
 
     public function recover_marks() {

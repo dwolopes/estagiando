@@ -3,9 +3,9 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="page-header">
-				<h1>Logout efetuado com sucesso!</h1>
+				<h1>Marcação realizada com sucesso!</h1>
 			</div>
-			<p>Tenha um bom dia!</p>
+			<p>Marcações realizadas é um sinal de tranquilidade para todos nós :)</p>
 		</div>
 	</div><!-- .row -->
 </div><!-- .container -->
