@@ -2,12 +2,31 @@
 
 ## Instalação
 
+Faça o download do projeto e rode utilizando um servidor HTTP. No meu caso, utilizei o wamp64, mas pode se utilizar Xaamp ou o próprio do php.
+
 ## Funcionalidade
 
+O sistema trata-se de um sistema simples, onde o estagiário faz o seu registro e a partir desse momento acompanha e efetua suas marcações.
 
-## Login
-1. Open /application/config/database.php and edit with your database settings
-2. On your database, open a SQL terminal paste this and execute:
+O sistema oferece quatro tipos de marcações comuns: entrada, saida para o almoço, volta do almoço e por fim, saída definitiva da empresa. De acordo com a marcação que o estagiário deve fazer, ele informará, com um click, o horário de tal marcação.
+
+O sistema possui alguns controles, como: não permitir o registro duplicado de uma mesma marcação. Por exemplo: o estagiário não consegue marcar entrada na empresa duas vezes. Um outra "feature" que ainda não ficou pronta, é verificar se ao marcar qualquer outro registro que não seja entrada na empresa, se anterioemente a entrada na empresa foi registrada. Ou se ao bater para voltar do almoço, se o estário registrou sua saída para o almoço. 
+
+Por fim, o estário consegue verificar suas marcações na aba: "verificar marcações". Nela ele consegue verificar todas as marcações dos dias que ele efetuou marcação. E uma feature a ser adicionada, é a oportunidade de filtrar mês a mês e imprimir relatórios de registros.
+
+
+#### Maiores desafios
+
+O maior desafio foi trabalhar com Codelgniter, nunca tinha utilizado esse Framework. Porém já trabalhei com frameworks como Laravel e Cakephp.
+
+Utilizar Ajax com Codelgniter, abordando login com sessões foi mais complicado que eu imaginava. A maior dificuldade foi a troca de informações entre arquivos utilizando tokens.
+
+Porém houve algumas facilidades, como o fato de eu já conhecer sobre o paradigma MVC. Não tive tanta difiduldade em trabalhar com views, controllers e models e transferir os dados entre essas camadas.
+
+
+##### Tabelas e configurações
+1. Abra /application/config/database.php e edite as configurações do banco.
+2. Abra seu banco de dados, crie um banco chamado: estagiando_bd, e execute:
 
 ```sql
 CREATE TABLE IF NOT EXISTS `users` (
@@ -32,22 +51,6 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
   PRIMARY KEY (id),
   KEY `ci_sessions_timestamp` (`timestamp`)
 );
-```
-
-
-###Dados de uma sessão
-
-    <?php if (isset($_SESSION)): ?>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <?php var_dump($_SESSION);?>
-          </div>
-        </div><!-- .row -->
-      </div><!-- .container -->
-    <?php endif;?>
-
-###Registro de marcações
 
 CREATE TABLE `estagiando_bd`.`registros` (
   `id` INT NOT NULL,
@@ -58,6 +61,7 @@ CREATE TABLE `estagiando_bd`.`registros` (
   PRIMARY KEY (`id`));
 
 
-####Principais dificuldades
+```
 
-1) Ajax com codelguiniter - Como essa foi a primeira vez que trabalhei com o framework, tive algumas dificuldades em entender o funcionamento do seu token na hora de enviar e receber informações via ajax. Minha intenção era enviar as marcações dos estagiários para o banco de dados usando Ajax, porém o frame voltava com o erro 403. Esse problema ocorre pelas validações de token que devem ocorrer entre controller e dados enviados pelo ajax. Por questão de tempo, tive que buscar outras alteranativas.
+
+###Registro de marcações

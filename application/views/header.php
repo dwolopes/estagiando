@@ -5,14 +5,16 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Site title</title>
+	<title>Estagiando</title>
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="author" content="">
 
+
 	<!-- css -->
 	<link href="<?=base_url('assets/css/bootstrap.min.css')?>" rel="stylesheet">
 	<link href="<?=base_url('assets/css/style.css')?>" rel="stylesheet">
+	<link rel="icon" type="image/png" href="<?=base_url('assets/imagens/logo.png')?>" />
 
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>

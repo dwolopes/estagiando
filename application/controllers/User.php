@@ -44,10 +44,11 @@ class User extends CI_Controller {
 		$this->load->library('form_validation');
 
 		// set validation rules
-		$this->form_validation->set_rules('username', 'Username', 'trim|required|alpha_numeric|min_length[4]|is_unique[users.username]', array('is_unique' => 'Este nome de usuário já existe =( Escolha outro.'));
+		$this->form_validation->set_rules('name', 'Nome', 'trim|required|min_length[4]');
+		$this->form_validation->set_rules('username', 'Nome de usuário', 'trim|alpha|min_length[4]|is_unique[users.username]', array('is_unique' => 'Este nome de usuário já existe =( Escolha outro.'));
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[users.email]');
-		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[6]');
-		$this->form_validation->set_rules('password_confirm', 'Confirm Password', 'trim|required|min_length[6]|matches[password]');
+		$this->form_validation->set_rules('password', 'Senha', 'trim|required|min_length[6]');
+		$this->form_validation->set_rules('password_confirm', 'Confirme sua senha', 'trim|required|min_length[6]|matches[password]');
 
 		if ($this->form_validation->run() === false) {
 
@@ -104,7 +105,7 @@ class User extends CI_Controller {
 
 		// set validation rules
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
-		$this->form_validation->set_rules('password', 'Password', 'required');
+		$this->form_validation->set_rules('password', 'Senha', 'required');
 
 		if ($this->form_validation->run() == false) {
 
