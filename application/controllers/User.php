@@ -75,7 +75,7 @@ class User extends CI_Controller {
 			} else {
 
 				// user creation failed, this should never happen
-				$data->error = 'There was a problem creating your new account. Please try again.';
+				$data->error = 'Houve um problema ao criar sua conta. Tente novamente :)';
 
 				// send error to the view
 				$this->load->view('header');
@@ -141,7 +141,7 @@ class User extends CI_Controller {
 			} else {
 
 				// login failed
-				$data->error = 'Wrong username or password.';
+				$data->error = 'Senha ou email incorretos.';
 
 				// send error to the view
 				$this->load->view('header');

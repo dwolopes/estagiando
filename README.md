@@ -29,10 +29,10 @@ Porém houve algumas facilidades, como o fato de eu já conhecer sobre o paradig
 2. Abra seu banco de dados, crie um banco chamado: estagiando_bd, e execute:
 
 ```sql
-CREATE TABLE IF NOT EXISTS `users` (
+CREATE TABLE IF NOT EXISTS `estagiando_bd`.`users` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL DEFAULT '',
   `username` varchar(255) NOT NULL DEFAULT '',
+  `name` varchar(255) NOT NULL DEFAULT '',
   `email` varchar(255) NOT NULL DEFAULT '',
   `password` varchar(255) NOT NULL DEFAULT '',
   `avatar` varchar(255) DEFAULT 'default.jpg',
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `is_deleted` tinyint(1) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 );
-CREATE TABLE IF NOT EXISTS `ci_sessions` (
+CREATE TABLE IF NOT EXISTS `estagiando_bd`.`ci_sessions` (
   `id` varchar(40) NOT NULL,
   `ip_address` varchar(45) NOT NULL,
   `timestamp` int(10) unsigned DEFAULT 0 NOT NULL,
@@ -64,4 +64,15 @@ CREATE TABLE `estagiando_bd`.`registros` (
 ```
 
 
-###Registro de marcações
+****O arquivo dump está dentro da pasta raíz do projeto. O repositório de chama Dump_estagiando_bd . *****
+
+###Conclusão e considerações finais
+
+O exercício não foi difícil e tivemos tempo sufiente. O meu maior desafio foi o fato de o e-mail ter caído na minha ciaxa de spam, e somente na quarta feira quando a Débora da Gama ne chamou inbox, fui verificar e tinha recebido. Assim que recebi as instruções comecei a realizar a tarefa.
+
+Umas das tarefas que mais gostaria de ter adicionado, seria o relatório de ponto. Onde no relatório imprimiria uma tabela, onde os titulos das linhas seriam: Data, Entrada, Saída para almoço, volta do almoço e saída. No corpo da tabela eu colocaria em cada linha essas informações. Para tanto, eu usaria a função arruy_push, onde a cada dia encontrado na tabela, eu adicionaria o horário da marcação e o tipo da marcação. Então seria assim: Filtro um determinado mês, pego as datas presentes no banco daquele mês que contém marcacação. Faço uma função que encontra as marcações presentes dia a dia desse mês e utilizo array push para adicionar a hora da marcação e o tipo dela. Na minha view, por fim, faco um laço que exibirá um dia por linha e os horário das marcações. Utilizaria alguma biblioteca para inserir esse html num PDF.
+
+
+Dúvidas: dwillian.lopes@gmail.com
+Tel: (31) 98303-8379.
+
