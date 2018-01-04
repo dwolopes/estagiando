@@ -66,13 +66,6 @@ CREATE TABLE `estagiando_bd`.`registros` (
 
 ****O arquivo dump está dentro da pasta raíz do projeto. O repositório de chama Dump_estagiando_bd . *****
 
-###Conclusão e considerações finais
-
-O exercício não foi difícil e tivemos tempo sufiente. O meu maior desafio foi o fato de o e-mail ter caído na minha ciaxa de spam, e somente na quarta feira quando a Débora da Gama ne chamou inbox, fui verificar e tinha recebido. Assim que recebi as instruções comecei a realizar a tarefa.
-
-Umas das tarefas que mais gostaria de ter adicionado, seria o relatório de ponto. Onde no relatório imprimiria uma tabela, onde os titulos das linhas seriam: Data, Entrada, Saída para almoço, volta do almoço e saída. No corpo da tabela eu colocaria em cada linha essas informações. Para tanto, eu usaria a função arruy_push, onde a cada dia encontrado na tabela, eu adicionaria o horário da marcação e o tipo da marcação. Então seria assim: Filtro um determinado mês, pego as datas presentes no banco daquele mês que contém marcacação. Faço uma função que encontra as marcações presentes dia a dia desse mês e utilizo array push para adicionar a hora da marcação e o tipo dela. Na minha view, por fim, faco um laço que exibirá um dia por linha e os horário das marcações. Utilizaria alguma biblioteca para inserir esse html num PDF.
-
-
 Dúvidas: dwillian.lopes@gmail.com
 Tel: (31) 98303-8379.
 
